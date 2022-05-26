@@ -19,7 +19,7 @@ class Copier {
 
       return await promise
     } catch (err) {
-      return err
+      return { message: err }
     }
   }
 
@@ -28,22 +28,21 @@ class Copier {
   }
 }
 
-// const src = 'a'
-// const copier = new Copier(src)
-// const dest = copier.copy()
-// console.log('dest: ', dest)
-
-// const src1 = { a: 'b', c: { d: 'e', f: ['g', { h: 'i' }] } }
-// const copier1 = new Copier(src1)
-// const dest1 = copier1.copy()
-// console.log('dest1: ', dest1)
-// console.log('same object: ', dest1 === src1)
-
-const src = 'test'
+const src = 'a'
 const copier = new Copier(src)
+const dest = copier.copy()
+console.log('dest: ', dest)
 
-copier.delete().then(resp => console.log(resp))
+const src1 = { a: 'b', c: { d: 'e', f: ['g', { h: 'i' }] } }
+const copier1 = new Copier(src1)
+const dest1 = copier1.copy()
+console.log('dest1: ', dest1)
+console.log('same object: ', dest1 === src1)
 
-// copier.get().then(resp => console.log(resp))
-// console.log(copier.delete())
-// console.log(copier.copy())
+const src2 = 'b'
+const copier2 = new Copier(src2)
+copier2.get().then(resp => console.log('dest2: ', resp))
+
+const src3 = 'c'
+const copier3 = new Copier(src3)
+copier3.delete().then(resp => console.log('dest3: ', resp))
