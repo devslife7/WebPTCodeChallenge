@@ -1,8 +1,6 @@
 # WebPTCodeChallenge
 
-## The Copier class:<br />
-
-## a class that copies, gets and tries to delete the given argument.
+## The Copier class: a class that copies, gets and tries to delete the given argument.
 
 // copy() method return the original argument  
 // copy() method return a copy of the original argument if it is an Object  
