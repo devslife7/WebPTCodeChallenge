@@ -10,7 +10,7 @@ class Copier {
   }
 
   copy() {
-    return this.src
+    return { ...this.src }
   }
 }
 
