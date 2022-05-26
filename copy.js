@@ -1,9 +1,21 @@
-class Copy {
-  constructor(name) {
-    this.name = name
+class Copier {
+  constructor(src) {
+    this.src = src
+  }
+  get() {
+    return this.src
+  }
+  delete() {
+    return 'cannot delete'
+  }
+
+  copy() {
+    return this.src
   }
 }
 
-const person = new Copy('Marcos')
+const copier = new Copier({ name: 'my name' })
 
-console.log('my name is: ', person.name)
+console.log(copier.get())
+console.log(copier.delete())
+console.log(copier.copy())
